@@ -8,13 +8,13 @@ public class Semaforo
     public bool amarilloIntermitente;
     public int tiempoIntermitente;
     
-    public readonly (string Color, int Duracion)[] secuencia = new[]
-    {
+    public readonly (string Color, int Duracion)[] secuencia =
+    [
         ("Rojo", 30),
         ("Rojo - Amarillo", 2),
         ("Verde", 20),
         ("Amarillo", 2)
-    };
+    ];
     
     public int indiceSecuencia;
     
