@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Bici_Auto_Camion/1.0.0": {
+        "runtime": {
+          "Bici_Auto_Camion.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bici_Auto_Camion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
