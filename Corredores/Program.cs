@@ -86,7 +86,7 @@ public class Program
         TestJugador(amateur, 20);
     }
 
-    private static void TestJugador(IJugador jugador, int resistenciaMaxima)
+    public static void TestJugador(IJugador jugador, int resistenciaMaxima)
     {
         Console.WriteLine($"Resistencia inicial: {resistenciaMaxima} minutos");
         
