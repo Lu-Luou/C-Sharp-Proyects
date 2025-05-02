@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bici_Auto_Camion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a64415f3d711867c2ddec3ae406354bf1d80474e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffeb95e08235f48099b9b9f6222d0cbcb35d1150")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bici_Auto_Camion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bici_Auto_Camion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
