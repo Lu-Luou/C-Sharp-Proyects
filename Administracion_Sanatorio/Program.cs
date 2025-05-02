@@ -9,7 +9,7 @@ namespace Administracion_Sanatorio
 
         public static void Main()
         {
-            RegistrarIntervencion("12345678", "INT001", "MP12345", DateTime.Now, false); //personalmente guardaria todos, los pendientes y los pagados
+            RegistrarIntervencion("12345678", "INT001", "MP12345", DateTime.Now, false);
 
             GenerarReporteLiquidaciones();
         }
@@ -18,7 +18,7 @@ namespace Administracion_Sanatorio
         {
             if (registroIndex >= registros.Length)
             {
-                Console.WriteLine("Error: No se pueden registrar más intervenciones, el arreglo está lleno.");
+                Console.WriteLine("Error: No se pueden registrar más intervenciones.");
                 return;
             }
 
@@ -43,6 +43,8 @@ namespace Administracion_Sanatorio
                 Console.WriteLine("Error: Médico no disponible o no coincide con la especialidad requerida.");
                 return;
             }
+
+
 
             decimal costoTotal = intervencion.Arancel;
             if (intervencion is IntervencionAltaComplejidad altaComplejidad) //demasiados warnings de null me van a volver loco
@@ -71,7 +73,7 @@ namespace Administracion_Sanatorio
                 CostoTotal = costoTotal
             };
 
-            Console.WriteLine("\nIntervención registrada exitosamente.");
+            Console.WriteLine("\nIntervención registrada con éxito.");
         }
 
         public static void GenerarReporteLiquidaciones()
@@ -82,7 +84,7 @@ namespace Administracion_Sanatorio
 
             foreach (var registro in registros)
             {
-                if (registro != null && !registro.Pagado)
+                if (registro != null && !registro.Pagado) //personalmente guardaria todos, los pendientes y los pagados
                 {
                     Console.WriteLine($"{registro.Id,-2} | {registro.Fecha.ToShortDateString(),-11} | {registro.Paciente.Nombre} {registro.Paciente.Apellido,-12} | {registro.Medico.Nombre} {registro.Medico.Apellido,-12} | ${registro.CostoTotal:F2}");
                 }
