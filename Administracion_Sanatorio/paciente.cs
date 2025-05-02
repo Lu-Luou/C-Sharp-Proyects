@@ -9,6 +9,6 @@ namespace Administracion_Sanatorio
         public string Apellido { get; set; }
         public string Telefono { get; set; }
         public bool ObraSocial { get; set; }
-        public int MontoCobertura { get; set; }
+        public decimal MontoCobertura { get; set; } //copilot me lo armo con decimal y me di cuenta tarde
     }
 }

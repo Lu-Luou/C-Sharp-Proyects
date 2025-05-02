@@ -7,11 +7,11 @@ namespace Administracion_Sanatorio
         public string Codigo { get; set; }
         public string Descripcion { get; set; }
         public string Especialidad { get; set; }
-        public int Arancel { get; set; }
+        public decimal Arancel { get; set; }
     }
 
     public class IntervencionAltaComplejidad : Intervencion
     {
-        public int PorcentajeAdicional { get; set; }
+        public decimal PorcentajeAdicional { get; set; }
     }
 }

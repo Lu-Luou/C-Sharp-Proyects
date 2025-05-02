@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Administracion_Sanatorio/1.0.0": {
+        "runtime": {
+          "Administracion_Sanatorio.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Administracion_Sanatorio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
