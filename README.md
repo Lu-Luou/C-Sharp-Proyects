@@ -1,5 +1,7 @@
 # Carpetas con los proyectos de C#, POO
 
+## ⛔⛔⛔ Profe me contaron que hay topos viendo este repositorio ⛔⛔⛔
+
 esta lindo c#
 
 ```bash
