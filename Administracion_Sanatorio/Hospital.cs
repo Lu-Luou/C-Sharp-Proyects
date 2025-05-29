@@ -68,5 +68,42 @@ namespace AdministracionSanatorio
 
             this.Registros.Add(registro);
         }
+
+        public void MostrarPacientes()
+        {
+            Console.WriteLine("Listado de pacientes registrados:");
+            foreach (var paciente in Pacientes)
+            {
+                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine($"DNI: {paciente.dni}");
+                Console.WriteLine($"Nombre: {paciente.nombre}");
+                Console.WriteLine($"Teléfono: {paciente.telefono}");
+                Console.WriteLine($"Obra Social: {(string.IsNullOrEmpty(paciente.obraSocial) ? "-" : paciente.obraSocial)}");
+                Console.WriteLine($"Porcentaje Cobertura: {paciente.porcentajeCobertura}%");
+                Console.WriteLine("Intervenciones realizadas: " + (paciente.intervenciones?.Count ?? 0));
+                if (paciente.intervenciones != null && paciente.intervenciones.Count > 0)
+                {
+                    foreach (var interv in paciente.intervenciones)
+                    {
+                        Console.WriteLine($"  - {interv.descripcion} ({interv.codigo}) - {interv.especialidad} - ${interv.arancel}");
+                    }
+                }
+            }
+            Console.WriteLine("--------------------------------------------------");
+        }
+
+        public double CalcularCostoTotal(string dni)
+        {
+            var paciente = Pacientes.FirstOrDefault(p => p.dni == dni);
+            if (paciente == null || paciente.intervenciones == null)
+                return 0;
+
+            double costoTotal = 0;
+            foreach (var interv in paciente.intervenciones)
+            {
+                costoTotal += interv.arancel * (1 - paciente.porcentajeCobertura / 100.0);
+            }
+            return costoTotal;
+        }
     }
 }
