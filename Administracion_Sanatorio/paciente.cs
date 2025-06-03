@@ -1,14 +1,27 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Administracion_Sanatorio
+namespace AdministracionSanatorio
 {
     public class Paciente
     {
-        public string DocumentoIdentidad { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Telefono { get; set; }
-        public bool ObraSocial { get; set; }
-        public decimal MontoCobertura { get; set; } //copilot me lo armo con decimal y me di cuenta tarde
+        public string dni { get; set; }
+        public string nombre { get; set; }
+        public string telefono { get; set; }
+        public string obraSocial { get; set; }
+        public int porcentajeCobertura { get; set; }
+        public List<Intervencion> intervenciones { get; set; }
+        public Paciente(string dni, string nombre, string telefono, string obraSocial, int porcentajeCobertura)
+        {
+            this.dni = dni;
+            this.nombre = nombre;
+            this.telefono = telefono;
+            this.obraSocial = obraSocial;
+            this.porcentajeCobertura = porcentajeCobertura;
+            this.intervenciones = new List<Intervencion>();
+        }
     }
 }

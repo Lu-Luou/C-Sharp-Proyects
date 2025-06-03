@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Lucas\\AA IPS\\6to año 2025\\Adaptación del ambiente laboral\\Administracion_Sanatorio\\Administracion_Sanatorio.csproj",
-      "projectName": "Administracion_Sanatorio",
-      "projectPath": "D:\\Lucas\\AA IPS\\6to año 2025\\Adaptación del ambiente laboral\\Administracion_Sanatorio\\Administracion_Sanatorio.csproj",
+      "projectUniqueName": "D:\\Lucas\\AA IPS\\6to año 2025\\Adaptación del ambiente laboral\\Administracion_Sanatorio\\AdministracionSanatorio.csproj",
+      "projectName": "AdministracionSanatorio",
+      "projectPath": "D:\\Lucas\\AA IPS\\6to año 2025\\Adaptación del ambiente laboral\\Administracion_Sanatorio\\AdministracionSanatorio.csproj",
       "packagesPath": "C:\\Users\\ruber\\.nuget\\packages\\",
       "outputPath": "D:\\Lucas\\AA IPS\\6to año 2025\\Adaptación del ambiente laboral\\Administracion_Sanatorio\\obj\\",
       "projectStyle": "PackageReference",

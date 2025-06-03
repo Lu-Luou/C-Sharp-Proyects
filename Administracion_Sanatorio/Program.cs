@@ -1,92 +1,110 @@
 ﻿using System;
 
-namespace Administracion_Sanatorio
+namespace AdministracionSanatorio
 {
     public class Program
     {
-        private static RegistroIntervencion[] registros = new RegistroIntervencion[100];
-        private static int registroIndex = 0;
-
         public static void Main()
         {
-            RegistrarIntervencion("12345678", "INT001", "MP12345", DateTime.Now, false);
+            Hospital hospital = new Hospital();
 
-            GenerarReporteLiquidaciones();
+            //testing(hospital);
+            
+            MenuInteractivo(hospital);
         }
 
-        public static void RegistrarIntervencion(string documentoPaciente, string codigoIntervencion, string matriculaMedico, DateTime fecha, bool pagado)
+        public static void testing(Hospital institucion)
         {
-            if (registroIndex >= registros.Length)
-            {
-                Console.WriteLine("Error: No se pueden registrar más intervenciones.");
-                return;
-            }
+            institucion.Pacientes.Add(new Paciente("69696969", "Sigma Chad", "9696-7777", "GigaChads", 99));
 
-            Paciente paciente = Array.Find(BaseDeDatos.Pacientes, p => p.DocumentoIdentidad == documentoPaciente);
-            if (paciente == null)
-            {
-                Console.WriteLine("Error: Paciente no encontrado.");
-                return;
-            }
+            institucion.MostrarPacientes();
 
-            Intervencion intervencion = Array.Find(BaseDeDatos.Intervenciones, i => i.Codigo == codigoIntervencion);
-            if (intervencion == null)
-            {
-                Console.WriteLine("Error: Intervención no encontrada.");
-                return;
-            }
+            institucion.AsignarIntervencion("69696969", "INT004");
 
-            Medico medico = Array.Find(BaseDeDatos.Medicos, m => m.MatriculaProfesional == matriculaMedico);
-            // mucho no entiendo que hace el string.equals pero me ayuda a comparar sin tomar en cuenta mayusculas y minusculas
-            if (medico == null || !string.Equals(medico.Especialidad, intervencion.Especialidad, StringComparison.OrdinalIgnoreCase) || !medico.Disponible)
-            {
-                Console.WriteLine("Error: Médico no disponible o no coincide con la especialidad requerida.");
-                return;
-            }
+            Console.WriteLine($"Costo total de las intervenciones del paciente con dni 69696969: ${institucion.CalcularCostoTotal("69696969"):F2}");
 
-
-
-            decimal costoTotal = intervencion.Arancel;
-            if (intervencion is IntervencionAltaComplejidad altaComplejidad) //demasiados warnings de null me van a volver loco
-            {
-                costoTotal += (costoTotal * altaComplejidad.PorcentajeAdicional / 100);
-            }
-
-            if (paciente.ObraSocial)
-            {
-                costoTotal -= paciente.MontoCobertura;
-                if (costoTotal < 0)
-                {
-                    costoTotal = 0;
-
-                }
-            }
-
-            registros[registroIndex++] = new RegistroIntervencion
-            {
-                Id = registroIndex,
-                Fecha = fecha,
-                Paciente = paciente,
-                Intervencion = intervencion,
-                Medico = medico,
-                Pagado = pagado,
-                CostoTotal = costoTotal
-            };
-
-            Console.WriteLine("\nIntervención registrada con éxito.");
+            institucion.MostrarLiquidacionesPendientes();
         }
 
-        public static void GenerarReporteLiquidaciones()
+        public static void MenuInteractivo(Hospital hospital)
         {
-            Console.WriteLine("\nReporte de Liquidaciones Pendientes:");
-            Console.WriteLine("ID | Fecha       | Paciente          | Médico            | Costo Total");
-            Console.WriteLine("---------------------------------------------------------------");
-
-            foreach (var registro in registros)
+            while (true)
             {
-                if (registro != null && !registro.Pagado) //personalmente guardaria todos, los pendientes y los pagados
+                Console.WriteLine("\n=== MENÚ DEL HOSPITAL ===");
+                Console.WriteLine("1. Dar de alta un nuevo Paciente");
+                Console.WriteLine("2. Listar los pacientes");
+                Console.WriteLine("3. Asignar una nueva intervención a un Paciente");
+                Console.WriteLine("4. Calcular el costo de las intervenciones de un paciente (por DNI)");
+                Console.WriteLine("5. Reporte de liquidaciones pendientes de pago");
+                Console.WriteLine("0. Salir");
+                Console.Write("Seleccione una opción: ");
+                string opcion = Console.ReadLine();
+
+                switch (opcion)
                 {
-                    Console.WriteLine($"{registro.Id,-2} | {registro.Fecha.ToShortDateString(),-11} | {registro.Paciente.Nombre} {registro.Paciente.Apellido,-12} | {registro.Medico.Nombre} {registro.Medico.Apellido,-12} | ${registro.CostoTotal:F2}");
+                    case "1":
+                        Console.Write("DNI: ");
+                        string dni = Console.ReadLine();
+                        Console.Write("Nombre: ");
+                        string nombre = Console.ReadLine();
+                        Console.Write("Teléfono: ");
+                        string telefono = Console.ReadLine();
+                        Console.Write("Obra Social (dejar vacío si no tiene): ");
+                        string obraSocial = Console.ReadLine();
+
+                        int porcentajeCobertura;
+                        while (true)
+                        {
+                            Console.Write("Porcentaje de cobertura (0 si no tiene): ");
+                            string buffer = Console.ReadLine();
+                            if (int.TryParse(buffer, out porcentajeCobertura) && porcentajeCobertura >= 0 && porcentajeCobertura <= 100)
+                                break;
+                            Console.WriteLine("Por favor, ingrese un número válido entre 0 y 100.");
+                        }
+
+                        hospital.Pacientes.Add(new Paciente(dni, nombre, telefono, obraSocial, porcentajeCobertura));
+                        Console.WriteLine("\nPaciente dado de ALTA correctamente");
+                        break;
+
+                    case "2":
+                        hospital.MostrarPacientes();
+                        break;
+
+                    case "3":
+                        Console.Write("DNI del paciente: ");
+                        string dniInterv = Console.ReadLine();
+                        Console.Write("Código de la intervención: ");
+                        string codInterv = Console.ReadLine();
+
+                        try
+                        {
+                            hospital.AsignarIntervencion(dniInterv, codInterv);
+                            Console.WriteLine("\nIntervención asignada correctamente.");
+                        }
+                        catch (Exception excepcion)
+                        {
+                            Console.WriteLine("Error: " + excepcion.Message);
+                        }
+                        break;
+
+                    case "4":
+                        Console.Write("DNI del paciente: ");
+                        string dniCosto = Console.ReadLine();
+                        double costo = hospital.CalcularCostoTotal(dniCosto);
+                        Console.WriteLine($"\nCosto total de las intervenciones del paciente con DNI {dniCosto}: ${costo:F2}");
+                        break;
+
+                    case "5":
+                        hospital.MostrarLiquidacionesPendientes();
+                        break;
+
+                    case "0":
+                        Console.WriteLine("Gracias por usar el sistema :D");
+                        return;
+
+                    default:
+                        Console.WriteLine("Opción no válida. Intente nuevamente.");
+                        break;
                 }
             }
         }
