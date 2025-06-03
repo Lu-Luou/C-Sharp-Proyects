@@ -15,5 +15,5 @@ esta lindo c#
 Reemplaza el contenido de Program.cs con lo que sea que pueda compilar .net
 
 ```bash
-    dotnet run
+    dotnet run -v d
 ```
