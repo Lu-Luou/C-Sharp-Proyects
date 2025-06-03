@@ -66,12 +66,12 @@ namespace AdministracionSanatorio
 
             var registro = new RegistroIntervencion(DateTime.Now, intervencion, medico, paciente, false);
 
-            this.Registros.Add(registro);
+            Registros.Add(registro);
         }
 
         public void MostrarPacientes()
         {
-            Console.WriteLine("Listado de pacientes registrados:");
+            Console.WriteLine("\nListado de pacientes registrados:");
             foreach (var paciente in Pacientes)
             {
                 Console.WriteLine("--------------------------------------------------");
@@ -104,6 +104,31 @@ namespace AdministracionSanatorio
                 costoTotal += interv.arancel * (1 - paciente.porcentajeCobertura / 100.0);
             }
             return costoTotal;
+        }
+
+        public void MostrarLiquidacionesPendientes()
+        {
+            Console.WriteLine("\n=== Reporte de Liquidaciones Pendientes ===");
+            var pendientes = Registros.Where(r => !r.Pagado);
+
+            if (!pendientes.Any())
+            {
+                Console.WriteLine("No hay liquidaciones pendientes.");
+                return;
+            }
+
+            foreach (var reg in pendientes)
+            {
+                Console.WriteLine("------------------------------------------");
+                Console.WriteLine($"ID: {reg.Id}");
+                Console.WriteLine($"Fecha: {reg.Fecha}");
+                Console.WriteLine($"Paciente: {reg.Paciente.nombre} (DNI: {reg.Paciente.dni})");
+                Console.WriteLine($"Médico: {reg.Medico.nombre} (Matrícula: {reg.Medico.matricula})");
+                Console.WriteLine($"Intervención: {reg.Intervencion.descripcion} ({reg.Intervencion.codigo})");
+                Console.WriteLine($"Obra Social: {(string.IsNullOrEmpty(reg.Paciente.obraSocial) ? "-" : reg.Paciente.obraSocial)}");
+                Console.WriteLine($"Importe Total: ${reg.Intervencion.arancel * (1 - reg.Paciente.porcentajeCobertura / 100.0):F2}");
+            }
+            Console.WriteLine("------------------------------------------");
         }
     }
 }
