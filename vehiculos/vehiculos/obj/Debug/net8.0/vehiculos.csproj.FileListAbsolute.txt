@@ -1,0 +1,14 @@
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\obj\Debug\net8.0\vehiculos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\obj\Debug\net8.0\vehiculos.AssemblyInfoInputs.cache
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\obj\Debug\net8.0\vehiculos.AssemblyInfo.cs
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\obj\Debug\net8.0\vehiculos.csproj.CoreCompileInputs.cache
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\bin\Debug\net8.0\vehiculos.exe
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\bin\Debug\net8.0\vehiculos.deps.json
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\bin\Debug\net8.0\vehiculos.runtimeconfig.json
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\bin\Debug\net8.0\vehiculos.dll
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\bin\Debug\net8.0\vehiculos.pdb
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\obj\Debug\net8.0\vehiculos.dll
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\obj\Debug\net8.0\refint\vehiculos.dll
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\obj\Debug\net8.0\vehiculos.pdb
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\obj\Debug\net8.0\vehiculos.genruntimeconfig.cache
+C:\Users\Tizi\source\repos\vehiculos\vehiculos\obj\Debug\net8.0\ref\vehiculos.dll
