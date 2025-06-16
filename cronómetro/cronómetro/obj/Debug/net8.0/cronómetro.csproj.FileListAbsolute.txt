@@ -1,0 +1,14 @@
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\bin\Debug\net8.0\cronómetro.exe
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\bin\Debug\net8.0\cronómetro.deps.json
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\bin\Debug\net8.0\cronómetro.runtimeconfig.json
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\bin\Debug\net8.0\cronómetro.dll
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\bin\Debug\net8.0\cronómetro.pdb
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\obj\Debug\net8.0\cronómetro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\obj\Debug\net8.0\cronómetro.AssemblyInfoInputs.cache
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\obj\Debug\net8.0\cronómetro.AssemblyInfo.cs
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\obj\Debug\net8.0\cronómetro.csproj.CoreCompileInputs.cache
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\obj\Debug\net8.0\cronómetro.dll
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\obj\Debug\net8.0\refint\cronómetro.dll
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\obj\Debug\net8.0\cronómetro.pdb
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\obj\Debug\net8.0\cronómetro.genruntimeconfig.cache
+C:\Users\Tizi\source\repos\cronómetro\cronómetro\obj\Debug\net8.0\ref\cronómetro.dll
