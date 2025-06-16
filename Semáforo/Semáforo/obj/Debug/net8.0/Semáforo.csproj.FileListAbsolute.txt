@@ -1,0 +1,14 @@
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\bin\Debug\net8.0\Semáforo.exe
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\bin\Debug\net8.0\Semáforo.deps.json
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\bin\Debug\net8.0\Semáforo.runtimeconfig.json
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\bin\Debug\net8.0\Semáforo.dll
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\bin\Debug\net8.0\Semáforo.pdb
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\obj\Debug\net8.0\Semáforo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\obj\Debug\net8.0\Semáforo.AssemblyInfoInputs.cache
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\obj\Debug\net8.0\Semáforo.AssemblyInfo.cs
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\obj\Debug\net8.0\Semáforo.csproj.CoreCompileInputs.cache
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\obj\Debug\net8.0\Semáforo.dll
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\obj\Debug\net8.0\refint\Semáforo.dll
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\obj\Debug\net8.0\Semáforo.pdb
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\obj\Debug\net8.0\Semáforo.genruntimeconfig.cache
+C:\Users\Tizi\source\repos\Semáforo\Semáforo\obj\Debug\net8.0\ref\Semáforo.dll
